@@ -96,9 +96,9 @@ public class NativeHotkey
         return keys[virtualCode];
     }
 
-    public static Set< Map.Entry< Integer[], Hotkey > > getHotkeys()
+    public static Map< Integer[], Hotkey > getHotkeys()
     {
-        return hotkeys.entrySet();
+        return Collections.unmodifiableMap( hotkeys );
     }
 
     private static int toSwingKey( int key )
